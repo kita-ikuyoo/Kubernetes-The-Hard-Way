@@ -1,4 +1,3 @@
-IP FQDN HOST POD_SUBNET
 192.168.119.137 server.kubernetes.local server
 192.168.119.135 node-0.kubernetes.local node-0 10.0.0.0/24
 192.168.119.136 node-1.kubernetes.local node-1 10.0.1.0/24
