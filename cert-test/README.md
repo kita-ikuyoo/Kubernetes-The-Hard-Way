@@ -40,5 +40,9 @@ Then, open a server using good.key and good.crt and access it using curl.
 openssl s_server -key good.key -cert good.crt -accept 8443 -www &
 curl --cacert good.crt https://127.0.0.1:8443 -o curlgood.text
 ```
+Finally kill the server.
+```
+kill %1
+```
 # Summary
 SAN and CN are used to match the IP or domain name in curl command.
