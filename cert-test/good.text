@@ -1,0 +1,79 @@
+Certificate:
+    Data:
+        Version: 3 (0x2)
+        Serial Number:
+            31:7f:a0:4a:cc:2a:4b:7d:6d:70:e7:bc:88:b4:92:5f:22:39:7b:79
+        Signature Algorithm: sha256WithRSAEncryption
+        Issuer: CN = kube-proxy
+        Validity
+            Not Before: Feb 25 05:50:18 2026 GMT
+            Not After : Feb 25 05:50:18 2027 GMT
+        Subject: CN = kube-proxy
+        Subject Public Key Info:
+            Public Key Algorithm: rsaEncryption
+                Public-Key: (2048 bit)
+                Modulus:
+                    00:b5:51:dd:3d:cb:45:70:e5:17:70:7d:b9:86:99:
+                    e8:32:df:cb:42:72:aa:76:ad:7a:11:e1:ec:68:95:
+                    f1:11:99:19:8c:33:e2:67:c3:ec:2a:83:70:17:16:
+                    c9:d6:e6:d7:ef:95:ca:8e:26:61:df:df:ff:27:48:
+                    e2:d5:b7:0f:4d:6b:8d:9b:30:38:66:40:5a:e2:fe:
+                    8d:22:86:e5:cb:b9:9d:05:1d:7d:ba:31:00:93:0d:
+                    df:49:0c:6e:18:c9:4c:25:fb:de:ba:9b:38:b9:13:
+                    05:0d:9d:57:fc:f9:d7:a5:b4:c7:f0:99:e9:ce:ff:
+                    d4:92:75:25:c8:7c:f5:b0:89:09:55:39:c8:e4:ab:
+                    4c:7c:85:b8:88:9e:57:d9:b6:8a:03:eb:61:1e:e8:
+                    c7:68:72:8a:a8:39:53:b0:bb:c1:ca:f9:cd:7a:9a:
+                    b1:4a:3a:36:d3:28:a2:cc:5d:da:b7:68:c1:83:e3:
+                    96:8b:f8:d2:d2:b9:13:5e:61:18:d9:ef:b4:ae:85:
+                    08:bc:00:34:fe:70:22:3c:81:cd:36:7f:91:e5:19:
+                    1e:a3:34:c9:07:e2:e3:f5:74:11:ea:bb:90:bc:4b:
+                    e6:96:ac:35:cd:ce:b1:06:fb:96:42:a2:ca:7a:2c:
+                    e9:3a:6a:c1:2e:ac:51:47:d2:4d:78:00:90:cb:4e:
+                    8a:25
+                Exponent: 65537 (0x10001)
+        X509v3 extensions:
+            X509v3 Subject Key Identifier: 
+                46:FF:8A:08:AB:A6:E6:03:90:DD:C3:8D:85:B0:2B:23:94:F8:AF:6B
+            X509v3 Authority Key Identifier: 
+                46:FF:8A:08:AB:A6:E6:03:90:DD:C3:8D:85:B0:2B:23:94:F8:AF:6B
+            X509v3 Basic Constraints: critical
+                CA:TRUE
+            X509v3 Subject Alternative Name: 
+                IP Address:127.0.0.1, DNS:kube-proxy
+    Signature Algorithm: sha256WithRSAEncryption
+    Signature Value:
+        75:9a:4f:fc:ec:88:13:d1:6b:0e:5b:79:b2:b2:9e:8c:65:9a:
+        dc:07:4f:08:55:5a:32:82:cf:8e:bc:d2:f8:96:d4:f2:67:1d:
+        06:54:76:a7:c8:d8:11:72:b9:a0:88:2e:3e:fb:91:0d:90:0d:
+        b9:bd:40:a3:fb:8c:6c:cd:34:4a:c9:2f:6b:8a:ce:7a:93:75:
+        54:d0:47:80:b8:7b:ba:cb:45:1c:2e:07:e7:b6:46:f6:d2:69:
+        d7:a8:06:e7:30:8a:88:7e:f4:b8:93:e6:8d:ef:d7:a5:4b:85:
+        18:76:9b:2c:3a:74:36:00:e9:c5:80:cf:c1:4a:da:5c:a3:45:
+        f8:0e:c8:54:27:60:e8:43:e6:0f:c6:27:b4:da:7c:fd:e6:cd:
+        d2:34:32:3c:5b:dc:31:9d:79:04:21:51:81:96:71:fe:07:9d:
+        51:e9:6e:09:38:9d:91:64:ad:99:f0:d4:3f:06:9e:1f:d8:ff:
+        5c:1f:4f:94:82:36:4b:da:18:58:53:db:ad:09:e6:93:af:30:
+        fa:bc:a3:c4:a2:71:6a:19:50:dd:df:f5:fa:3b:72:94:94:4f:
+        62:2d:28:82:20:63:39:83:18:a7:77:eb:a9:ea:a2:23:32:d1:
+        cb:20:4d:f4:a3:11:82:6b:bc:27:d0:78:4c:f1:67:a8:9b:76:
+        0c:62:35:05
+-----BEGIN CERTIFICATE-----
+MIIDKDCCAhCgAwIBAgIUMX+gSswqS31tcOe8iLSSXyI5e3kwDQYJKoZIhvcNAQEL
+BQAwFTETMBEGA1UEAwwKa3ViZS1wcm94eTAeFw0yNjAyMjUwNTUwMThaFw0yNzAy
+MjUwNTUwMThaMBUxEzARBgNVBAMMCmt1YmUtcHJveHkwggEiMA0GCSqGSIb3DQEB
+AQUAA4IBDwAwggEKAoIBAQC1Ud09y0Vw5RdwfbmGmegy38tCcqp2rXoR4exolfER
+mRmMM+Jnw+wqg3AXFsnW5tfvlcqOJmHf3/8nSOLVtw9Na42bMDhmQFri/o0ihuXL
+uZ0FHX26MQCTDd9JDG4YyUwl+966mzi5EwUNnVf8+deltMfwmenO/9SSdSXIfPWw
+iQlVOcjkq0x8hbiInlfZtooD62Ee6MdocoqoOVOwu8HK+c16mrFKOjbTKKLMXdq3
+aMGD45aL+NLSuRNeYRjZ77SuhQi8ADT+cCI8gc02f5HlGR6jNMkH4uP1dBHqu5C8
+S+aWrDXNzrEG+5ZCosp6LOk6asEurFFH0k14AJDLToolAgMBAAGjcDBuMB0GA1Ud
+DgQWBBRG/4oIq6bmA5Ddw42FsCsjlPivazAfBgNVHSMEGDAWgBRG/4oIq6bmA5Dd
+w42FsCsjlPivazAPBgNVHRMBAf8EBTADAQH/MBsGA1UdEQQUMBKHBH8AAAGCCmt1
+YmUtcHJveHkwDQYJKoZIhvcNAQELBQADggEBAHWaT/zsiBPRaw5bebKynoxlmtwH
+TwhVWjKCz4680viW1PJnHQZUdqfI2BFyuaCILj77kQ2QDbm9QKP7jGzNNErJL2uK
+znqTdVTQR4C4e7rLRRwuB+e2RvbSadeoBucwioh+9LiT5o3v16VLhRh2myw6dDYA
+6cWAz8FK2lyjRfgOyFQnYOhD5g/GJ7TafP3mzdI0Mjxb3DGdeQQhUYGWcf4HnVHp
+bgk4nZFkrZnw1D8Gnh/Y/1wfT5SCNkvaGFhT260J5pOvMPq8o8SicWoZUN3f9fo7
+cpSUT2ItKIIgYzmDGKd366nqoiMy0csgTfSjEYJrvCfQeEzxZ6ibdgxiNQU=
+-----END CERTIFICATE-----
