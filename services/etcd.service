@@ -1,0 +1,32 @@
+[Unit]
+Description=etcd
+Documentation=https://github.com/etcd-io/etcd
+
+[Service]
+Type=notify
+# これは一つのノードを立てるためのコマンドです
+# そして--initial-clusterにはcontrollerしかありませんので、クラスタを立てるためのコマンドとも言えます。
+ExecStart=/usr/local/bin/etcd \
+# ここのcontrollerは一つのノードの名前です
+    --name controller
+# クラスタを立てるとき、ほかのメンバに自分と通信したいなら、このurlにアクセスしてねと伝えます
+    --initial-advertise-peer-urls http://127.0.0.1:2380
+# 実際になんのURLでpeerからの接続を待ち受けています。
+    --listen-peer-urls http://127.0.0.1:2380
+# クラスタ内のメンバ一覧
+    --initial-cluster controller=http://127.0.0.1:2380
+    --advertise-client-urls http://127.0.0.1:2379
+    --listen-client-urls http://127.0.0.1:2379
+# このクラスタの識別名です
+    --initial-cluster-token etcd-cluster-0
+# 新しいクラスタを起動するか、あるいは既存のクラスタに参加するか
+    --initial-cluster-state new
+# 新しいクラスタを起動するので、ここで使われているdata-dirは空であるべき
+    --data-dir=/var/lib/etcd
+
+Restart=on-failure
+RestartSec=5
+
+[Install]
+# 通常起動時に自動起動させるための指定
+WantedBy=multi-user.target

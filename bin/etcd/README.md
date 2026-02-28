@@ -1,0 +1,3 @@
+# Why does etcd use kube-apiserver's certificate and private key
+kubernetsを正しく立てれば、etcdに直接アクセスするのはkube-apiserverだけです。そして、etcdとkube-apiserverは同じマシンにあるため、kube-apiserverからは127.0.0.1の特定のポートをアクセスすれば十分です。そこで、kube-apiserverの証明書のSANとCNには127.0.0.1がはいっているので、この証明書をそのままetcdが流用しても問題なく稼働できます。もちろん、システム設計の目線から見るとダメな点もいっぱいあります、これに関して現在は考慮しないようにします。
+ちなみに、ここで立てられたetcdノード間の通信はHTTPベースなので、証明書は使いません（etcd.serviceを参照してください）。

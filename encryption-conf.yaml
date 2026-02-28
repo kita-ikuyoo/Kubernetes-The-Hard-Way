@@ -1,0 +1,16 @@
+kind: EncryptionConfiguration
+apiVersion: apiserver.config.k8s.io/v1
+resources:
+  # resourcesが配列になっている理由：
+  # 違うリソースに対して違う方式で暗号化と複号したい
+  - resources:
+      - secrets
+    # providers中の-aescbcなどが配列になる理由：
+    # 書き込み時は一番上の方法を使います。しかし、読み取り時は上から順番に暗号化を解除の方法を試します。ここの一番下のidentity:{}は平文で読み取る意味です。
+    providers:
+      - aescbc:
+          keys:
+            # keyの別名
+            - name: key1
+              secret: k0yIowrFV0cSB3hSeQKu9p6+QZI4NDZvW7MufhWIY48=
+      - identity: {}
