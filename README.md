@@ -1,8 +1,13 @@
 # バイナリファイルから構成されたKubernetesクラスタ
 【個人開発】Kubernetesクラスターのスクラッチ構築
 使用技術：Kubernetes, Debian, CNI, OpenSSL
+
 役割：Kubernetesの内部認証認可および通信制御の仕組みの習得
+
 内容：AWS EKSを使う中でKubernetes内部の仕組みに興味を持ち、マネージドサービスやkubeadm等のツールを一切使わず、各コンポーネント（kube-apiserver, kube-controller-manager, kube-scheduler, etcd, kubelet, kubeproxy）のバイナリから3ノード構成のクラスターを構築しました。
+
 認証認可の仕組みについて、コンポーネント間通信ではクライアント・サーバー双方の身元検証が必要なため、OpenSSLで自前のCAを構築し、各コンポーネント用に証明書を発行してkubeconfigに埋め込み、mTLS通信を実現しました。証明書ではCN/Oが個別にKubernetes内のUser/Groupに対応し、RBAC認証とNode認証の仕組みを実機で理解できたのが大きな収穫でした。
+
 また、Pod間通信では、containerdとbridge CNIプラグインで各PodにIPを払い出し、ノード間はstatic routeで疎通させることで、普段CNIが裏で何をしているかを体感しました。
+
 この経験を通じて、普段マネージドサービスで隠蔽されているKubernetesの内部構造を体系的に理解できました。今後はこの基礎知識を活かし、本番環境のトラブルシューティングや、より適切なクラウドインフラ設計に貢献していきたいと考えています。
