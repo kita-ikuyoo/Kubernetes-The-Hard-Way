@@ -12,3 +12,5 @@
 また、Pod間通信では、containerdとbridge CNIプラグインで各PodにIPを払い出し、ノード間はstatic routeで疎通させることで、普段CNIが裏で何をしているかを体感しました。
 
 この経験を通じて、普段マネージドサービスで隠蔽されているKubernetesの内部構造を体系的に理解できました。今後はこの基礎知識を活かし、本番環境のトラブルシューティングや、より適切なクラウドインフラ設計に貢献していきたいと考えています。
+
+また、ServiceによるKubernetesの通信制御をテーマに、YJC Connect NightでLT登壇しました。記事：https://qiita.com/daradara/items/d380d5b0a8d507475b23
