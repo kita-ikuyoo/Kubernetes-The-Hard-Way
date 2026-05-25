@@ -1,44 +1,8 @@
 # バイナリファイルから構成されたKubernetesクラスタ
-## Features
-1. kubeadmなどの既存ツールを使わず、バイナリファイルからKubernetesクラスタを構成する
-2. kube-api-serverなどのコンポーネントの証明書と秘密鍵をマニュアルに作成することで、Kubernetes内部のTLS通信により一層深く理解できます。
-3. AWSなどのクラウドプロバイダーを使わなく、自身のPCだけにて完結できます。
-
-## Architecture
-![control plane](Assets/overview.png)
-
-
-## Requirements
-### オペレーティングシステム
-[debian-12.13.0-amd64-netinst](https://www.debian.org/releases/bookworm/debian-installer/)
-
-### 仮想マシン
-| Name    | Description            | CPU | RAM   | Storage |
-|---------|------------------------|-----|-------|---------| 
-| server  | Kubernetes server      | 1   | 2GB   | 20GB    |
-| node-0  | Kubernetes worker node | 1   | 2GB   | 20GB    |
-| node-1  | Kubernetes worker node | 1   | 2GB   | 20GB    |
-
-### VMwareを使う人へ
-debianをインストール済みの仮想マシンファイルを提供しますので、それを使ってVMwareで簡単に再現できると思います。
-
-## etcd構成
-1. 台数：単体クラスタ
-2. 置く場所：control planeと同じマシン
-3. TLS通信：なし
-詳細はetcd.mdで確認
-
-## ネットワーク
-1. Pod CIDR
-10.0.0.0/16
-2. Service CIDR
-10.32.0.0/24
-3. CNI
-bridge + host-local
-4. Service Proxy
-iptables mode
-
-## セキュリティ
-- TLS PKI generated manually
-- RBAC configured
-- ServiceAccount authentication
+【個人開発】Kubernetesクラスターのスクラッチ構築
+使用技術：Kubernetes, Debian, CNI, OpenSSL
+役割：Kubernetesの内部認証認可および通信制御の仕組みの習得
+内容：AWS EKSを使う中でKubernetes内部の仕組みに興味を持ち、マネージドサービスやkubeadm等のツールを一切使わず、各コンポーネント（kube-apiserver, kube-controller-manager, kube-scheduler, etcd, kubelet, kubeproxy）のバイナリから3ノード構成のクラスターを構築しました。
+認証認可の仕組みについて、コンポーネント間通信ではクライアント・サーバー双方の身元検証が必要なため、OpenSSLで自前のCAを構築し、各コンポーネント用に証明書を発行してkubeconfigに埋め込み、mTLS通信を実現しました。証明書ではCN/Oが個別にKubernetes内のUser/Groupに対応し、RBAC認証とNode認証の仕組みを実機で理解できたのが大きな収穫でした。
+また、Pod間通信では、containerdとbridge CNIプラグインで各PodにIPを払い出し、ノード間はstatic routeで疎通させることで、普段CNIが裏で何をしているかを体感しました。
+この経験を通じて、普段マネージドサービスで隠蔽されているKubernetesの内部構造を体系的に理解できました。今後はこの基礎知識を活かし、本番環境のトラブルシューティングや、より適切なクラウドインフラ設計に貢献していきたいと考えています。
